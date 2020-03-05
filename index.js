@@ -5,15 +5,21 @@ const inquirer = require("inquirer");
 inquirer
   .prompt({
     message: "Enter your GitHub username:",
-    name: "username"
+    name: "username",
   })
-  .then(function({ response}) {
-      fs.writeFile("username.json", JSON.stringify(response), function(err) {
+
+  .then(function ({ username }) {
+      fs.writeFile("username.json", JSON.stringify(username), function (err) {
         if (err) {
           return console.log(err);
         }
-        console.log("it worked!");
-        });
-      });
-  
+      
+        console.log(username);
 
+        const queryUrl = `https://api.github.com/users/${username}`;
+
+        console.log(queryUrl)
+      })
+    })
+
+  
