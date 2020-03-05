@@ -7,3 +7,13 @@ inquirer
     message: "Enter your GitHub username:",
     name: "username"
   })
+  .then(function({ response}) {
+      fs.writeFile("username.json", JSON.stringify(response), function(err) {
+        if (err) {
+          return console.log(err);
+        }
+        console.log("it worked!");
+        });
+      });
+  
+
