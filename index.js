@@ -17,8 +17,13 @@ inquirer
         console.log(username);
 
         const queryUrl = `https://api.github.com/users/${username}`;
-
         console.log(queryUrl)
+
+        axios.get(queryUrl).then(function(userInfo){
+          email = userInfo.data.email;
+          picture = userInfo.data.avatar_url;
+          console.log(email, picture);
+        })
       })
     })
 
