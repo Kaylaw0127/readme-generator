@@ -48,13 +48,49 @@ inquirer
           },
           {
             message: "Who contributed to this project?",
-            name: "contributing"
+            name: "contributors"
           },
           {
             message: "What tests were done on this project?",
             name: "tests"
+          },
+          {
+            message: "Which license would you like to use?",
+            name: "license"
+          },
+          {
+            message: "Which badge would you like to use?",
+            name: "badge"
           }
-        ])
+        ]).then(function(username) {
+          const answers =
+            `# ${username.title} ${username.badge} \n
+            # Description \n
+            ${username.description} \n
+            # Table of Contents \n
+            ${username.contents} \n
+            # Installation \n
+            ${username.installation} \n
+            # Usage \n
+            ${username.usage} \n
+            # License
+            ${username.license} \n
+            # Contributors \n
+            ${username.contributors} \n
+            # Tests \n
+            ${username.tests} \n
+            # Questions \n
+            ${email} \n
+            ${picture} `
+          
+          fs.appendFile("README.md", answers + "\n", function(err) {
+            if (err) {
+              return console.log(err);
+            } 
+            console.log("Success!")
+            console.log(answers)
+          })
+        })
       })
     })
  })
