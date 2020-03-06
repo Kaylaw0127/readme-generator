@@ -1,8 +1,9 @@
-# readme-generator#   
+# readme-generator
+# Readme generator  
 
             # Description 
 
-             
+            creating a perfect readme 
 
             # Table of Contents 
 
@@ -14,14 +15,14 @@
 
             # Usage 
 
-             
+            creating readme 
 
             # License
              
 
             # Contributors 
 
-             
+            myself 
 
             # Tests 
 
@@ -31,4 +32,4 @@
 
             null 
 
-![profile image](https://avatars2.githubusercontent.com/u/57245838?v=4) 
+![profile image](https://avatars2.githubusercontent.com/u/57245838?v=4)
