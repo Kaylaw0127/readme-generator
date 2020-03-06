@@ -19,7 +19,6 @@ inquirer
         // console.log(queryUrl)
 
       axios.get(queryUrl).then(function(userInfo){
-         
       email = userInfo.data.email;
       picture = userInfo.data.avatar_url;
         // console.log(email, picture);
@@ -81,7 +80,7 @@ inquirer
             ${username.tests} \n
             # Questions \n
             ${email} \n
-            ![profile image](${picture}) `
+            ![profile image](${picture})`
           
           fs.appendFile("README.md", answers + "\n", function(err) {
             if (err) {
